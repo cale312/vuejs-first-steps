@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VueJs | First Steps</title>
+    <title>VueJs | Punchbag Game</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
@@ -15,8 +15,16 @@
 
     <div id="vue-app">
 
+        <div id="bag" v-bind:class="{ burst: ended }"></div>
 
+        <div id="bag-health">
+            <div v-bind:style="{ width: health + '%'}"></div>
+        </div>
         
+        <div id="controls">
+            <button v-on:click="punch" v-show="!ended">Punch</button>
+            <button v-on:click="restart">Restart</button>
+        </div>
 
     </div>
     
